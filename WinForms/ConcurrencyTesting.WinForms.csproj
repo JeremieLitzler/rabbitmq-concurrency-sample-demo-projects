@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\ConcurrencyTesting.Contracts.csproj" />
+    <ProjectReference Include="..\Publisher.V1\ConcurrencyTesting.Publisher.V1.csproj" />
+    <ProjectReference Include="..\Publisher.V2\ConcurrencyTesting.Publisher.V2.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- The real shared abstractions, linked (not copied) so every app compiles the same source. -->
+    <Compile Include="..\SharedSource\IMessagingPublishClient.cs" Link="Shared\IMessagingPublishClient.cs" />
+    <Compile Include="..\SharedSource\IMessagingConnectable.cs" Link="Shared\IMessagingConnectable.cs" />
+  </ItemGroup>
+</Project>
