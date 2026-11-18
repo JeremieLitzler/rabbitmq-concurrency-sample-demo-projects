@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\ConcurrencyTesting.Contracts.csproj" />
+    <ProjectReference Include="..\Publisher.V1\ConcurrencyTesting.Publisher.V1.csproj" />
+    <ProjectReference Include="..\Publisher.V2\ConcurrencyTesting.Publisher.V2.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <NoWarn>$(NoWarn);CS8632</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <ProjectReference Include="..\Contracts\ConcurrencyTesting.Contracts.csproj" />
+    <!-- SECOND implementation: the live shared client, linked so edits show up here immediately. -->
+    <Compile Include="..\SharedSource\RabbitMQMessagingClient.cs" Link="Shared\RabbitMQMessagingClient.cs" />
+    <Compile Include="..\Shared\ClientPublisherFactory.cs" Link="ClientPublisherFactory.cs" />
+  </ItemGroup>
+</Project>
