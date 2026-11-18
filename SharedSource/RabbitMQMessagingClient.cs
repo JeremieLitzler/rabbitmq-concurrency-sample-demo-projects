@@ -89,8 +89,8 @@ namespace MyCompany.Infrastructure.Messaging.RabbitMQ
 #endif
 
 				// Reading the sequence number, registering the pending confirm and publishing happen as one unit.
-				// Otherwise two concurrent publishers can read the same sequence number, and RabbitMQ documents that
-				// a channel must not be shared by threads that publish on it.
+				// Otherwise two concurrent publishers can read the same sequence number (reproduced in the demo projects),
+				// and RabbitMQ's publishers guide says concurrent publishing on a shared channel is not supported by client libraries.
 				// Waiting for the broker confirm happens outside the lock, so publishers are not serialized on the broker round trip.
 				await _publishLock.WaitAsync(cancellationToken).ConfigureAwait(false);
 				try
